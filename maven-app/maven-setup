@@ -1,0 +1,11 @@
+java (jdk)
+
+JAVA_HOME/java in path
+
+MAVEN_HOME/M2_HOME
+
+mvn in path
+
+mvn archetype:generate -DgroupId=com.devops -DartifactId=devops -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=booleanValue
+
+java -cp <jar-file> <class-name>
