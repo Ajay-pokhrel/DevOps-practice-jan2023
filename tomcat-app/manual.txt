@@ -1,0 +1,15 @@
+tomcat9 tomcat9-admin
+tomcat9.service
+
+/etc/tomcat9/tomcat-users.xml
+<role rolename="admin-gui"/>
+<role rolename="manager-gui"/>
+<role rolename="manager-script"/>
+<user username="admin" password="password" roles="admin-gui,manager-gui,manager-script"/>
+
+
+Deploy to container
+https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/
+
+sudo visudo
+$USER ALL=(ALL) NOPASSWD: ALL
