@@ -9,4 +9,5 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 
 #Post installtion setup
 sudo groupadd docker
-sudo usermod -aG docker vagrant
+sudo usermod -aG docker jenkins
+
