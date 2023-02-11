@@ -1,10 +1,6 @@
 pipeline {
   environment {
-<<<<<<< HEAD
     repo = "ajaypokhrel/completepipeline"
-=======
-    repo = "ajaypokhhrel/completepipeline"
->>>>>>> 01a87137afbe1d35b0962a47c56ad1f95ec77e49
   }
   agent any
   stages {
