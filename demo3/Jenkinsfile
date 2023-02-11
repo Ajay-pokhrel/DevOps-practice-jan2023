@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Clean docker image') {
       steps {
-        sh 'docker rmi $repo:v$BUILD_NUMBER'
+        sh 'ansible-playbook Ansible/dockerinstall.yaml'
       }
     }
     stage('Deploy container') {
