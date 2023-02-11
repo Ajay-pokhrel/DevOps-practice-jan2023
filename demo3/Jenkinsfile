@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    repo = "tutorbrijan/dockerpipeline"
+    repo = "ajaypokhrel/completepipeline"
   }
   agent any
   stages {
