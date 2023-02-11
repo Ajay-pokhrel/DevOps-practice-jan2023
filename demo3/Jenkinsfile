@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    repo = "ajaypokhhrel/completepipeline"
+    repo = "ajaypokhrel/completepipeline"
   }
   agent any
   stages {
@@ -18,6 +18,11 @@ pipeline {
       }
     }
     stage('Clean docker image') {
+      steps {
+        sh 'docker rmi $repo:v$BUILD_NUMBER'
+      }
+    }
+    stage('Install Docker'){
       steps {
         sh 'ansible-playbook Ansible/dockerinstall.yaml'
       }
