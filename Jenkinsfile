@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    repo = "ajaypokhrel/completepipeline"
+    repo = "ajaypokhrel/completepipelinedemo2"
   }
   agent any
   stages {
