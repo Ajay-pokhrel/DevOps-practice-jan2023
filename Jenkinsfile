@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    repo = "ajaypokhrel/completepipelinedemo2"
+    repo = "ajaypokhrel/completepipeline"
   }
   agent any
   stages {
@@ -11,7 +11,7 @@ pipeline {
     }
     stage('Deploy container') {
       steps {
-        sh 'ansible-playbook Ansible/deploycontainer.yaml -e "image_name=$repo image_tag=latest"'
+        sh 'ansible-playbook Ansible/deploycontainer.yaml -e "image_name=$repo image_tag=v1"'
       }
     } 
   }
