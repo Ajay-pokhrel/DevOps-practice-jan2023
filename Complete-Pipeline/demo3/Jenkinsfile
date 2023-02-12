@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    repo = "tutorbrijan/dockerpipeline"
+    repo = "ajaypokhrel/completepipelinedemo3"
   }
   agent any
   stages {
@@ -11,8 +11,8 @@ pipeline {
     }
     stage('Docker Push') {
       steps {
-        withCredentials([usernamePassword(credentialsId: 'dockerhub-access', passwordVariable: 'Password', usernameVariable: 'User')]) {
-          sh "docker login -u ${env.User} -p ${env.Password}"
+        withCredentials([usernamePassword(credentialsId: 'dockerhub-access', passwordVariable: 'dockerpass', usernameVariable: 'dockeruser')]) {
+          sh "docker login -u ${env.dockeruser} -p ${env.dockerpass}"
           sh 'docker push $repo:v$BUILD_NUMBER'
         }
       }
@@ -20,6 +20,11 @@ pipeline {
     stage('Clean docker image') {
       steps {
         sh 'docker rmi $repo:v$BUILD_NUMBER'
+      }
+    }
+    stage('Install Docker'){
+      steps {
+        sh 'ansible-playbook Ansible/dockerinstall.yaml'
       }
     }
     stage('Deploy container') {
